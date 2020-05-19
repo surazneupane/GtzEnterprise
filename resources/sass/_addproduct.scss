@@ -1,0 +1,47 @@
+.add-product-section {
+  padding-bottom: 5em;
+  * {
+    box-sizing: border-box;
+  }
+
+  .form {
+    border: 1px solid rgba(153, 153, 153, 0.363);
+    border-radius: 20px;
+    overflow: hidden;
+    .heading {
+      background-color: #999;
+      padding: 1em;
+      color: #fff;
+    }
+    .form-group {
+      margin: 1em 0;
+      label {
+        margin: auto 0;
+        span.required {
+          color: red;
+          font-weight: bold;
+        }
+      }
+      .ck-editor__editable:not(.ck-editor__nested-editable) {
+        height: calc(300px - 38.5px);
+      }
+    }
+  }
+
+  .product-image-div {
+    width: 100%;
+    margin: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      img {
+        width: 150px;
+      }
+    }
+  }
+}
