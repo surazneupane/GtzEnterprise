@@ -59,6 +59,13 @@ class User extends Authenticatable
         return $this->hasMany('App\Product','user_id');
     }
 
+
+    public function images()
+    {
+
+    return $this->morphMany('App\Image','imageable');
+    }
+
     //mutator
 public function setFnameAttribute($value)
 {

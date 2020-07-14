@@ -17,11 +17,10 @@ class VendorMiddleware
      */
     public function handle($request, Closure $next)
     {
-
       
         if($request->user()==null||!($request->user()->hasRole('Vendor')))
         {
-return abort (401);
+return redirect(route('vendorlogin'));
         }
         return $next($request);
     }

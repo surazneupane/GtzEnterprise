@@ -64,6 +64,7 @@ class Kernel extends HttpKernel
         'disablebackbutton'=>\App\Http\Middleware\DisableBackButton::class,
         'logincheck'=>\App\Http\Middleware\LoggedIn::class,
         'vendorcheck'=>\App\Http\Middleware\VendorMiddleware::class,
+        'checkadmin'=>\App\Http\Middleware\AdminMiddleware::class,
     ];
 
     /**

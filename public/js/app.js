@@ -49917,6 +49917,28 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/sass/AdminDashboard.scss":
+/*!********************************************!*\
+  !*** ./resources/sass/AdminDashboard.scss ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/VendorDashboard.scss":
+/*!*********************************************!*\
+  !*** ./resources/sass/VendorDashboard.scss ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
@@ -49950,21 +49972,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/sass/vendordashboard.scss":
-/*!*********************************************!*\
-  !*** ./resources/sass/vendordashboard.scss ***!
-  \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
 /***/ 0:
-/*!*********************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/landingpagestyle.scss ./resources/sass/home.scss ./resources/sass/vendordashboard.scss ***!
-  \*********************************************************************************************************************************************************************/
+/*!**********************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/landingpagestyle.scss ./resources/sass/home.scss ./resources/sass/VendorDashboard.scss ./resources/sass/AdminDashboard.scss ***!
+  \**********************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -49972,7 +49983,8 @@ __webpack_require__(/*! C:\Users\Suraj\OneDrive\Kausaltar\gtz\resources\js\app.j
 __webpack_require__(/*! C:\Users\Suraj\OneDrive\Kausaltar\gtz\resources\sass\app.scss */"./resources/sass/app.scss");
 __webpack_require__(/*! C:\Users\Suraj\OneDrive\Kausaltar\gtz\resources\sass\landingpagestyle.scss */"./resources/sass/landingpagestyle.scss");
 __webpack_require__(/*! C:\Users\Suraj\OneDrive\Kausaltar\gtz\resources\sass\home.scss */"./resources/sass/home.scss");
-module.exports = __webpack_require__(/*! C:\Users\Suraj\OneDrive\Kausaltar\gtz\resources\sass\vendordashboard.scss */"./resources/sass/vendordashboard.scss");
+__webpack_require__(/*! C:\Users\Suraj\OneDrive\Kausaltar\gtz\resources\sass\VendorDashboard.scss */"./resources/sass/VendorDashboard.scss");
+module.exports = __webpack_require__(/*! C:\Users\Suraj\OneDrive\Kausaltar\gtz\resources\sass\AdminDashboard.scss */"./resources/sass/AdminDashboard.scss");
 
 
 /***/ })

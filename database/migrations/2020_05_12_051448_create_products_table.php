@@ -28,11 +28,11 @@ class CreateProductsTable extends Migration
             $table->string('quantityunit')->nullable();
             $table->integer('MRP')->nullable();
             $table->integer('SP')->required();
-            $table->string('status');
             $table->string('returnaccepted')->required();
-           $table->integer('returndays')->nullable();
+            $table->integer('returndays')->nullable();
             $table->integer('DTD')->required();
-            $table->string('requireapproval')->required();
+            $table->string('adminapproved')->default('No');
+            $table->string('status')->default('inActive');
             $table->integer('category_id');
             $table->timestamps();
         });

@@ -8,8 +8,10 @@ class Product extends Model
 {
     
 
+    protected $searchable=['productname','category_id','brand','model','sku',];
 
-protected $fillable=['productname','category','brand','model','sku',
+
+protected $fillable=['productname','brand','model','sku',
 'highlights','description','productdim','quantity','MRP','SP','status'
 ,'returnaccepted','DTD','requireapproval','category_id','dimunit','quantityunit'];
 public function images()
@@ -24,5 +26,6 @@ public function category()
 
     return $this->belongsTo('App\Productcategory');
 }
+
 
 }

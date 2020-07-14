@@ -40,7 +40,7 @@
     </footer>
     <script>
       document.querySelector('#btn1').addEventListener('click', function () {
-        window.location.href = '#link';
+        window.location.href = '{{route('onlineshop')}}';
       });
       document.querySelector('#btn2').addEventListener('click', function () {
         window.location.href = '#link';

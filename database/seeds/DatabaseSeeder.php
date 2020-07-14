@@ -50,20 +50,6 @@ $user->roles()->attach(1);
 
 
 
-        Productcategory::insert(
-
-
-            [
-
-                ['category'=>'Mobile'],
-                ['category'=>'Computer'],
-                ['category'=>'Bike'],
-                ['category'=>'Suite'],
-                ['category'=>'Laptop'],
-
-                    
-                    ]
-            );
     }
 
 

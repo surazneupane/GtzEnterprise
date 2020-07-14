@@ -7,6 +7,8 @@
     <!-- ? favicon -->
    
 <script src="https://cdn.ckeditor.com/ckeditor5/19.0.0/classic/ckeditor.js"></script>
+  <script src="{{url('/js/productForm.js')}}"></script>
+
    
     <link
       rel="shortcut icon"
@@ -45,7 +47,7 @@
     />
 
     <!-- ? custom css for dashboard -->
-    <link rel="stylesheet" href="{{ mix('/css/vendordashboard.css') }}" />
+    <link rel="stylesheet" href="{{ mix('/css/VendorDashboard.css') }}" />
   </head>
   <body>
     <header>

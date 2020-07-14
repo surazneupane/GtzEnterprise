@@ -1,0 +1,68 @@
+section.main {
+  .table {
+    text-align: center;
+    vertical-align: middle;
+    letter-spacing: 0.1em;
+    line-height: 1.5em;
+    td {
+      a {
+        &.btn-delete {
+          color: #000;
+          span.material-icons {
+            color: red;
+            font-size: 30px;
+          }
+          &:hover {
+            span.material-icons {
+              color: rgb(173, 4, 4);
+            }
+          }
+        }
+        &.btn-edit {
+          color: #000;
+          span.material-icons {
+            color: orange;
+            font-size: 30px;
+          }
+          &:hover {
+            span.material-icons {
+              color: rgb(182, 120, 4);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  section.main {
+    .table {
+      font-size: 85%;
+      thead {
+        display: none;
+      }
+      tbody,
+      tr,
+      td {
+        display: block;
+        width: 100vw;
+      }
+      td {
+        padding: 0.75em 3em;
+        display: flex;
+        justify-content: space-between;
+        &:last-of-type {
+          justify-content: center;
+          span.material-icons {
+            margin: auto 30px;
+          }
+        }
+        &::before {
+          content: attr(data-name);
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}

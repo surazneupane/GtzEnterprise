@@ -158,16 +158,7 @@
             disabled
           />
         </div>
-        <div class="form-group col-12 row">
-          <label for="status" class="col-sm-3">
-            Product Status: <span class="required">*</span>
-          </label>
-          <select name="status" id="status" class="custom-select col-sm-3">
-            <option value="" selected>Select One</option>
-            <option value="Active">Active</option>
-            <option value="InActive">In-Active</option>
-          </select>
-        </div>
+      
         <div class="form-group col-12 row">
           <label for="mrp" class="col-sm-3">MRP</label>
           <input
@@ -225,7 +216,6 @@
           />
         </div>
         <div class="col-12 my-2 text-center">
-          <input type="submit" value="Save Draft" name="needDraft" class="btn btn-secondary my-1 mx-1"/>
           <input
           name="needAdmin"
             type="submit"

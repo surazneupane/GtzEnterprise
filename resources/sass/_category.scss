@@ -1,0 +1,26 @@
+section.main {
+  .categories {
+    .btn {
+      padding: 0;
+      display: flex;
+      align-items: center;
+      height: 35px;
+      line-height: 1.5em;
+      overflow: hidden;
+      padding: 5px 10px;
+      background-color: rgb(5, 170, 5);
+      color: #fff;
+      margin: 20px 10px;
+      span.add {
+        font-size: 28px;
+      }
+    }
+img{
+  width: 75px;
+  height:75px;
+  object-fit: contain;
+
+}
+
+  }
+}

@@ -2,6 +2,7 @@
 @extends('vendor.layouts.loginandreg')
 @section('pageTitle', 'Signup | GTZ Online Shop')
 @section('formId','register')
+
     @section('content')
       <form
 action="{{route('vendorsignup')}}"
@@ -12,6 +13,8 @@ action="{{route('vendorsignup')}}"
       >
       @csrf
         <h3 class="text-center">Register with Us</h3>
+       @include('admin.layouts.message')
+
         <div id="error"></div>
         <div class="row">
           <div class="form-group col-md-4">
@@ -73,10 +76,7 @@ action="{{route('vendorsignup')}}"
               class="form-control"
               required
             />
-            @error('email')
-          <strong style="color: red">{{$message}}</strong>
-                
-            @enderror
+           
           </div>
           <div class="col-md-6 form-group">
             <label for="password">Password: </label>

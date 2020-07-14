@@ -10,20 +10,17 @@ class VendorController extends Controller
     //
 
 
-public function index()
-{
-
-  
-return view('vendor.dashboard.dashboard');
-    
-}
+    public function index()
+    {
 
 
-public function logoutVendor()
-{
- Auth::logout();
- return redirect('/vendor/signin');
+        return view('vendor.dashboard.dashboard');
+    }
 
-}
 
+    public function logoutVendor()
+    {
+        Auth::logout();
+        return redirect('/vendor/signin');
+    }
 }

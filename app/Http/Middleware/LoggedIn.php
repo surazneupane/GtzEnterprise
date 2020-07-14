@@ -20,7 +20,7 @@ if(Auth::check())
 {
 if(Auth::user()->hasRole('Admin'))
 {
-    return redirect('/admindashboard');
+    return redirect()->intended(route('admindashboard'));
 }
 else if(Auth::user()->hasRole('Vendor'))
 {
