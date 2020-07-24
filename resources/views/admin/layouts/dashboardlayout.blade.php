@@ -125,6 +125,14 @@
               <span class="nav-text">Products</span>
             </a>
           </li>
+          <li class="{{Request::is('admin/vieworders') ? 'active':' '}}">
+            <a href="{{route('adminvieworders')}}" class="nav-item btn">
+              <span class="material-icons">
+                shopping_cart
+              </span>
+              <span class="nav-text">Orders</span>
+            </a>
+          </li>
           <li>
             <a href="#" class="nav-item btn">
               <span class="material-icons">

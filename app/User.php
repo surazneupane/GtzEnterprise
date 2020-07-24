@@ -66,6 +66,8 @@ class User extends Authenticatable
     return $this->morphMany('App\Image','imageable');
     }
 
+
+    
     //mutator
 public function setFnameAttribute($value)
 {

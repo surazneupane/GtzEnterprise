@@ -1,5 +1,5 @@
 section.main {
-  .table {
+  .table:not(.table.customer_order) {
     text-align: center;
     vertical-align: middle;
     letter-spacing: 0.1em;

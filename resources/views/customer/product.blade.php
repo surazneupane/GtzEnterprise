@@ -12,66 +12,41 @@
       <div class="row">
         <div class="col-lg-4 col-md-8 col-sm-12 image-box container-fluid">
           <img
-            src="./static/images/laptop.jpg"
+            src="{{url('/images/vendor/'.$productToView->user_id.'/'.$productToView->images()->first()->name)}}"
             alt=""
             id="productImage"
             class="main-image"
           />
           <div class="image-selection" id="gallery">
+            @foreach ($productToView->images()->get() as $image)
+                
             <div class="image-item">
               <a
                 href="#"
                 class="elevatezoom-gallery active-image"
                 data-update=""
-                data-image="./static/images/laptop.jpg"
-                data-zoom-image="./static/images/laptop.jpg"
+                data-image="{{url('/images/vendor/'.$productToView->user_id.'/'.$image->name)}}"
+                data-zoom-image="{{url('/images/vendor/'.$productToView->user_id.'/'.$image->name)}}"
               >
-                <img src="./static/images/laptop.jpg" alt="" class="img-opt" />
+                <img src="{{url('/images/vendor/'.$productToView->user_id.'/'.$image->name)}}" alt="" class="img-opt" />
               </a>
             </div>
-            <div class="image-item">
-              <a
-                href="#"
-                class="elevatezoom-gallery"
-                data-update=""
-                data-image="./static/images/laptop1.png"
-                data-zoom-image="./static/images/laptop1.png"
-              >
-                <img src="./static/images/laptop1.png" alt="" class="img-opt" />
-              </a>
-            </div>
-            <div class="image-item">
-              <a
-                href="#"
-                class="elevatezoom-gallery"
-                data-update=""
-                data-image="./static/images/laptop2.jpg"
-                data-zoom-image="./static/images/laptop2.jpg"
-              >
-                <img src="./static/images/laptop2.jpg" alt="" class="img-opt" />
-              </a>
-            </div>
-            <div class="image-item">
-              <a
-                href="#"
-                class="elevatezoom-gallery slide-content"
-                data-update=""
-                data-image="./static/images/laptop3.jpg"
-                data-zoom-image="./static/images/laptop3.jpg"
-              >
-                <img src="./static/images/laptop3.jpg" alt="" class="img-opt" />
-              </a>
-            </div>
+            @endforeach
+
+         
+         
+          
           </div>
         </div>
         <div class="col-lg-8 col-md-12 col-sm-12 product-detail">
           <!-- TODO product detail and style -->
           <h3 class="product-name">
-            Lenovo Flex 14 2-in-1 Convertible Laptop, 14 Inch FHD Touchscreen
-            Display, AMD Ryzen 5 3500U Processor, 12GB DDR4 RAM, 256GB NVMe SSD,
-            Windows 10, 81SS000DUS, Black, Pen Included 4.4 out of 5 stars 1,439
+          {{$productToView->productname}}
           </h3>
-          <p>by <a href="#">Seller-name</a></p>
+
+          <?php $owner=$productToView->user()->first(); ?>
+
+          <p>by <a href="#">{{$owner->fname.' '.$owner->lname}}</a></p>
           <p class="rating">
             <span class="material-icons">
               star star star star_half star_outline
@@ -79,8 +54,8 @@
             no rating
           </p>
           <div class="buttons-div">
-            <button class="btn btn-success">Add to Cart</button>
-            <button class="btn btn-success">Buy Now</button>
+          <a id="btnAddToCart" href="{{route('addtocart',$productToView->id)}}" class="btn btn-success">Add to Cart</a>
+          <a href=""> <button class="btn btn-success">Buy Now</button></a>
             <span class="material-icons favorite">
               favorite
             </span>
@@ -114,4 +89,5 @@
       </div>
     </section>
     <!-- ? end of product section -->
+    
     @endsection

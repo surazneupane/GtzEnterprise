@@ -69,11 +69,16 @@
       @foreach ($categories as $category)
           
       <div class="category-item box">
+      <a href="{{route('viewcategorypro',$category->id)}}">
         <div class="img-box">
+
         <img src="{{url('/images/categoryimage/'.$category->image()->first()->name)}}" alt="Clothing" />
         </div>
+    </a>
+
         <h5>{{$category->category}}</h5>
       </div>
+
       @endforeach
 
        <a href="#" class="btn btn-category">View All Categories</a>

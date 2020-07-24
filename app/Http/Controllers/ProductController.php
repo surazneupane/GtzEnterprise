@@ -26,7 +26,7 @@ class ProductController extends Controller
     }
     public function loadListing($products)
     {
-        $categories=Productcategory::getAllCategories();
+        $categories=Productcategory::getAllCategories()->get();
        
         return view('vendor.dashboard.listing', compact('products','categories'));
 
@@ -38,7 +38,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-     $categories = Productcategory::getAllCategories();
+     $categories = Productcategory::getAllCategories()->get();
       return view('vendor.dashboard.addproduct', compact('categories'));
     }
 

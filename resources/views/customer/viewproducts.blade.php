@@ -6,19 +6,17 @@
     <!-- ? view peoducts section -->
     <section class="view-products">
       <div class="filter">
+      <form method="POST" action="{{route('filtercategorypro')}}">
+          @csrf
+
         <p>Filter Product</p>
         <p>Choose Category</p>
         <select name="category" id="category" class="form-control">
-          <option value="">category 1</option>
-          <option value="">category 2</option>
-          <option value="">category 3</option>
-          <option value="">category 4</option>
-          <option value="">category 5</option>
-          <option value="">category 6</option>
-          <option value="">category 7</option>
-          <option value="">category 8</option>
-          <option value="">category 9</option>
-          <option value="">category 10</option>
+         @foreach ($categories as $category)
+             
+        <option value="{{$category->id}}">{{$category->category}}</option>
+          @endforeach
+         
         </select>
         <p>Price Range</p>
         <label for="minimum">Minimum Price</label>
@@ -27,6 +25,7 @@
           name="minimum"
           id="minimum"
           placeholder="10000"
+          value="0"
           class="form-control my-2"
         />
         <label for="maximum">Maximum Price</label>
@@ -34,6 +33,7 @@
           type="text"
           name="maximum"
           id="maximum"
+          value="1000000"
           placeholder="1000000"
           class="form-control my-2"
         />
@@ -51,6 +51,7 @@
           value="Filter"
           class="btn btn-success form-control"
         />
+        </form>
       </div>
 
       <div class="products">
@@ -64,96 +65,30 @@
           </select>
         </div>
         <div class="product-listing">
+         
+        
+         
+         @foreach($productWithCategory as $product)
           <div class="product-card">
+          
+          <a href="{{route('viewspecificpro',$product->id)}}" >
+
             <div class="img-box">
-              <img src="./static/images/op8.jpg" alt="" class="product-image" />
-            </div>
-            <div class="product-detail">
-              <strong>Oneplus 8 Pro Vip Edition</strong>
-              <p>Price: <span class="selling-price">Rs.35000</span></p>
-              <p>Mrp: <span class="mrp">Rs.45000</span> <span>35%</span></p>
-            </div>
-          </div>
-          <div class="product-card">
-            <div class="img-box">
+
               <img
-                src="./static/images/shoe.png"
+                src="{{url('/images/vendor/'.$product->user_id.'/'.$product->images()->first()->name)}}"
                 alt=""
                 class="product-image"
               />
             </div>
+          </a>
             <div class="product-detail">
-              <strong>Oneplus 8 Pro Vip Edition</strong>
-              <p>Price: <span class="selling-price">Rs.35000</span></p>
-              <p>Mrp: <span class="mrp">Rs.45000</span> <span>35%</span></p>
+              <strong>{{$product->productname}}</strong>
+            <p>Price: <span class="selling-price">{{$product->SP}}</span></p>
+            <p>Mrp: <span class="mrp">{{$product->MRP}}</span> <span>35%</span></p>
             </div>
           </div>
-          <div class="product-card">
-            <div class="img-box">
-              <img
-                src="./static/images/clothing.png"
-                alt=""
-                class="product-image"
-              />
-            </div>
-            <div class="product-detail">
-              <strong>Oneplus 8 Pro Vip Edition</strong>
-              <p>Price: <span class="selling-price">Rs.35000</span></p>
-              <p>Mrp: <span class="mrp">Rs.45000</span> <span>35%</span></p>
-            </div>
-          </div>
-          <div class="product-card">
-            <div class="img-box">
-              <img
-                src="./static/images/iphone.jpg"
-                alt=""
-                class="product-image"
-              />
-            </div>
-            <div class="product-detail">
-              <strong>Oneplus 8 Pro Vip Edition</strong>
-              <p>Price: <span class="selling-price">Rs.35000</span></p>
-              <p>Mrp: <span class="mrp">Rs.45000</span> <span>35%</span></p>
-            </div>
-          </div>
-          <div class="product-card">
-            <div class="img-box">
-              <img
-                src="./static/images/suit.jpg"
-                alt=""
-                class="product-image"
-              />
-            </div>
-            <div class="product-detail">
-              <strong>Oneplus 8 Pro Vip Edition</strong>
-              <p>Price: <span class="selling-price">Rs.35000</span></p>
-              <p>Mrp: <span class="mrp">Rs.45000</span> <span>35%</span></p>
-            </div>
-          </div>
-          <div class="product-card">
-            <div class="img-box">
-              <img src="./static/images/cpu.png" alt="" class="product-image" />
-            </div>
-            <div class="product-detail">
-              <strong>Oneplus 8 Pro Vip Edition</strong>
-              <p>Price: <span class="selling-price">Rs.35000</span></p>
-              <p>Mrp: <span class="mrp">Rs.45000</span> <span>35%</span></p>
-            </div>
-          </div>
-          <div class="product-card">
-            <div class="img-box">
-              <img
-                src="./static/images/laptop.jpg"
-                alt=""
-                class="product-image"
-              />
-            </div>
-            <div class="product-detail">
-              <strong>Oneplus 8 Pro Vip Edition</strong>
-              <p>Price: <span class="selling-price">Rs.35000</span></p>
-              <p>Mrp: <span class="mrp">Rs.45000</span> <span>35%</span></p>
-            </div>
-          </div>
+          @endforeach
         </div>
       </div>
     </section>

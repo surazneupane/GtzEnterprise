@@ -14,7 +14,7 @@ class Productcategory extends Model
 
     public static function getAllCategories()
     {
-        return Productcategory::orderBy('category')->paginate(4);
+        return Productcategory::orderBy('category');
 
     }
 

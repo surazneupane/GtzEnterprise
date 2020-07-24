@@ -104,8 +104,8 @@
               <span class="nav-text">Listing</span>
             </a>
           </li>
-          <li>
-            <a href="#" class="nav-item btn">
+          <li class="{{Request::is('vendor/orders') ? 'active' : '' }}">
+          <a href="{{route('vieworders')}}" class="nav-item btn">
               <span class="material-icons">
                 book
               </span>

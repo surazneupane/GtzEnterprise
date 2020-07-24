@@ -27,7 +27,7 @@ class AdminController extends Controller
 
     public function showCategory()
     {
-        $categories=Productcategory::getAllCategories();
+        $categories=Productcategory::getAllCategories()->paginate(4);
         return view('admin.category',compact('categories'));
     }
     
@@ -115,6 +115,10 @@ class AdminController extends Controller
 
     }
 
+    public function viewOrders()
+    {
+        return view('admin.vieworders');
+    }
     public function adminLogout()
     {
         Auth::logout();

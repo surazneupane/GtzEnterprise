@@ -19,6 +19,23 @@ Route::get('/onlineshop','CustomerController@index')->name('onlineshop');
 Route::get('/auth/facebook','UserController@redirectToFacebook')->name('fblogin');
 Route::get('/auth/facebook/callback','UserController@handelFacebookCallback');
 
+//for customer
+Route::group(['middleware' => 'disablebackbutton'], function () {
+    
+Route::group(['prefix' => 'customer'], function () {
+    Route::get('/logout','CustomerController@logoutCustomer')->name('logoutcust');
+    Route::get('/viewcategory/{id}','CustomerController@viewCategoryProducts')->name('viewcategorypro');
+    Route::post('/viewcategory','CustomerController@viewCategoryProducts')->name('filtercategorypro');
+    Route::get('/viewproduct/{id}','CustomerController@viewSpecificProduct')->name('viewspecificpro');
+    Route::group(['middleware' => 'checkcustomer'], function () {
+        Route::get('/addToCart/{id}','CartController@addToCart')->name('addtocart');
+        Route::get('/checkout','CartController@checkOut')->name('checkout');
+        Route::post('/placeorder','CartController@placeOrder')->name('placeorder');
+});
+});
+    
+});
+
 
 //for vendor
 Route::group(['prefix' => 'vendor'], function () {
@@ -34,6 +51,9 @@ Route::get('/logout','VendorController@logoutVendor')->name('vendorlogout');
 Route::resource('product', 'ProductController');
 Route::get('status/{product}','ProductController@makeLiveOrInactive')->name('productstatus');
 Route::get('searchproduct','ProductController@searchProduct')->name('productsearch');
+Route::get('/orders','VendorController@viewOrders')->name('vieworders');
+Route::get('/showorder/{orderid}/{productid}','VendorController@showOrder')->name('viewspecificorder');
+Route::get('/rts/{btn}/{orderid}/{productid}','VendorController@orderStatus')->name('RTS');
 
 });
 
@@ -53,6 +73,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('/addbanner','AdminController@addBanner')->name('addbanner');
         Route::get('/changebannerstats/{id}','AdminController@editBannerStats')->name('changebannerstat');
         Route::get('/deletebanner/{id}','AdminController@deleteBanner')->name('deletebanner');
+        Route::get('/vieworders','AdminController@viewOrders')->name('adminvieworders');
     });
    
         

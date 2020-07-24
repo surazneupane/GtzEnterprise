@@ -89,9 +89,12 @@ class UserController extends Controller
     public function handelFacebookCallback()
     {
         try {
+            
             $getUser = Socialite::driver('facebook')->fields(['first_name', 'last_name', 'email'])->user();
             $returnedUser=$this->createUserFromFb($getUser);
             Auth::login($returnedUser);
+            return redirect()->back();
+           
              } catch (Exception $e) {
 
 
