@@ -11,7 +11,6 @@
 |
 */
 Route::view('/','landingpage');
-Route::get('/onlineshop','CustomerController@index')->name('onlineshop');
 
 
 //for facebook auth
@@ -23,6 +22,8 @@ Route::get('/auth/facebook/callback','UserController@handelFacebookCallback');
 Route::group(['middleware' => 'disablebackbutton'], function () {
     
 Route::group(['prefix' => 'customer'], function () {
+    Route::get('/onlineshop','CustomerController@index')->name('onlineshop');
+
     Route::get('/logout','CustomerController@logoutCustomer')->name('logoutcust');
     Route::get('/viewcategory/{id}','CustomerController@viewCategoryProducts')->name('viewcategorypro');
     Route::post('/viewcategory','CustomerController@viewCategoryProducts')->name('filtercategorypro');
@@ -74,6 +75,9 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/changebannerstats/{id}','AdminController@editBannerStats')->name('changebannerstat');
         Route::get('/deletebanner/{id}','AdminController@deleteBanner')->name('deletebanner');
         Route::get('/vieworders','AdminController@viewOrders')->name('adminvieworders');
+        Route::get('/vieworder/{id}','AdminController@viewOrder')->name('adminvieworder');
+        Route::get('/orderstat/{id}','AdminController@completeOrder')->name('ordercompleted');
+        
     });
    
         

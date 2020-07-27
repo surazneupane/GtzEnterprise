@@ -11,6 +11,7 @@
         <thead>
           <tr>
             <th>s/n</th>
+            <th>Order Id </th>
             <th>Product Name</th>
             <th>Quantity</th>
             <th >Product Price </th>
@@ -18,6 +19,7 @@
             <th>Customer</th>
             <th>Status</th>
             <th>Total Price</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -26,7 +28,10 @@
         <?php $product=App\Product::where('id',$order->pivot->product_id)->first()?>
              
           <tr>
+            
           <td>{{$i++}}</td>
+         <td>{{$order->id}} </td>
+
             <td class="ellipsis" data-maxlength="80">
               {{$product->productname}}
             </td>

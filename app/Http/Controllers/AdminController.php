@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\ProductCategory;
 use App\User;
 use App\Image;
+use App\Order;
 
 class AdminController extends Controller
 {
@@ -116,8 +117,26 @@ class AdminController extends Controller
     }
 
     public function viewOrders()
+    {   
+        $orders=Order::all()->sortByDesc('id');
+
+        return view('admin.vieworders',compact('orders'));
+    }
+
+    public function viewOrder($id)
     {
-        return view('admin.vieworders');
+        $specificOrder=Order::findOrFail($id);
+        return view('admin.vieworder',compact('specificOrder'));
+
+    }
+
+    public function completeOrder($id)
+    {
+        $completedOrder=Order::findOrfail($id);
+        $completedOrder->orderstatus="Completed";
+        $completedOrder->update();
+        return redirect()->back();
+    
     }
     public function adminLogout()
     {

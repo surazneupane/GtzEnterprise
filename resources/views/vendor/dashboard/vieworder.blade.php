@@ -67,8 +67,16 @@
             <p class="order-status">{{$productOrder->pivot->status}}</p>
           </div>
           <div class="col-12">
-            <a href="{{route('RTS',['btn'=>'ofs','orderid'=>$orderSpecific->id,'productid'=>$productOrder->id])}}" class="btn btn-warning">Out of stock</a>
-            <a href="{{route('RTS',['btn'=>'rts','orderid'=>$orderSpecific->id,'productid'=>$productOrder->id])}}" class="btn btn-success">Ready to Pickup</a>
+            <a href="{{route('RTS',['btn'=>'ofs','orderid'=>$orderSpecific->id,'productid'=>$productOrder->id])}}" class="btn btn-warning  
+               @if ($productOrder->pivot->status=="RTS")
+              disabled
+          @endif"
+            
+              >Out of stock</a>
+            <a href="{{route('RTS',['btn'=>'rts','orderid'=>$orderSpecific->id,'productid'=>$productOrder->id])}}" class="btn btn-success
+              @if ($productOrder->pivot->status=="RTS")
+              disabled
+          @endif">Ready to Pickup</a>
           </div>
         </div>
       </div>

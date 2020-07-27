@@ -27,7 +27,7 @@ class VendorController extends Controller
        $orders=array();
       foreach($products as $product)
       {
-          foreach($product->orders()->get() as $order)
+          foreach($product->orders()->orderBy('id','desc')->get() as $order)
           {
             array_push($orders,$order);
 
@@ -46,7 +46,7 @@ class VendorController extends Controller
 
     public function orderStatus($btn,$orderid,$productid)
     {
-
+        $orderStatus;
         
         $orderSpecific=Order::findOrFail($orderid);
         $productOrder=$orderSpecific->products()->where('product_id',$productid)->first();
@@ -55,15 +55,31 @@ class VendorController extends Controller
         $productOrder->pivot->status="RTS";
         else
         $productOrder->pivot->status="OFS";
-
-        
-        
-        
         $productOrder->pivot->save();
+
+
+        foreach($orderSpecific->products()->get() as $product)
+        {
+            if($product->pivot->status=="RTS")
+                 {
+            $orderStatus="RTS";
+                 }
+            else{
+                 $orderStatus="pending";
+                 break;
+              }
+                }
+                
+                $orderSpecific->orderstatus=$orderStatus;
+                $orderSpecific->update();
+        
+        
             return redirect(route('vieworders'));
         
 
     }
+
+  
     public function logoutVendor()
     {
         Auth::logout();
