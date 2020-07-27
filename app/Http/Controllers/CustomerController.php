@@ -50,7 +50,7 @@ class CustomerController extends Controller
     {
         Auth::logout();
         session()->flush();
-        return redirect('onlineshop');
+        return redirect(route("onlineshop"));
     }
 
 }

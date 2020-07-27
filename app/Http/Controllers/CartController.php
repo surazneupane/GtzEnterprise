@@ -34,9 +34,32 @@ class CartController extends Controller
    
                 }
 
-                public function checkOut()
+                public function checkOut(Request $request)
                 {
+
+                    $cart=session()->get('cart');
+
+                    $id = $request['id'];
+
+                    if($id){
+                        if(!$cart)
+                        {
+                            $cart=[
+                            $id
+                                ];  
+                        }
+
+                    //if cart already exits
+                    else{
+                        array_push($cart,$id);
+                    }
+   
+                    session()->put('cart',$cart);
+                    }
+
                     $getCart=session()->get('cart');
+
+
                     if(!$getCart)
                     {
                         return redirect()->back();

@@ -55,7 +55,7 @@
           </p>
           <div class="buttons-div">
           <a id="btnAddToCart" href="{{route('addtocart',$productToView->id)}}" class="btn btn-success">Add to Cart</a>
-          <a href=""> <button class="btn btn-success">Buy Now</button></a>
+           <a href="{{route('checkout', ["id"=>$productToView->id])}}" class="btn btn-success">Buy Now</a>
             <span class="material-icons favorite">
               favorite
             </span>
