@@ -23,6 +23,7 @@ Route::group(['middleware' => 'disablebackbutton'], function () {
     
 Route::group(['prefix' => 'customer'], function () {
     Route::get('/onlineshop','CustomerController@index')->name('onlineshop');
+    Route::get('/search','CustomerController@search')->name('search');
 
     Route::get('/logout','CustomerController@logoutCustomer')->name('logoutcust');
     Route::get('/viewcategory/{id}','CustomerController@viewCategoryProducts')->name('viewcategorypro');

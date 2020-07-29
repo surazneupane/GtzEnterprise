@@ -1,4 +1,4 @@
-const btnAddToCart = document.getElementById("btnAddToCart");
+  const btnAddToCart = document.getElementById("btnAddToCart");
 const cartItems = document.getElementById("cartItems");
 
 btnAddToCart.addEventListener("click", addToCart);
@@ -27,10 +27,8 @@ const sendHttpRequest = (method, url) => {
 function addToCart(e) {
   e.preventDefault();
   const href = e.target.href;
-  console.log(e.target);
   sendHttpRequest("GET", href)
     .then((responseData) => {
-      console.log(responseData);
       cartItems.textContent = responseData;
     })
     .catch((err) => {

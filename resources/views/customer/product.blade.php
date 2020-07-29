@@ -90,4 +90,67 @@
     </section>
     <!-- ? end of product section -->
     
+
+       <script
+      type="text/javascript"
+      src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.rawgit.com/jquery/jquery-mousewheel/3.1.12/jquery.mousewheel.js"
+    ></script>
+  
+    <script
+      type="text/javascript"
+      src="https://cdn.rawgit.com/igorlino/fancybox-plus/1.3.6/src/jquery.fancybox-plus.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.rawgit.com/igorlino/fancybox-plus/1.3.6/css/jquery.fancybox-plus.css"
+      media="screen"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdn.rawgit.com/igorlino/elevatezoom-plus/1.1.17/src/jquery.ez-plus.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.rawgit.com/igorlino/elevatezoom-plus/1.1.17/css/jquery.ez-plus.css"
+      media="screen"
+    />
+    <script src="{{url('js/cart.js')}}"></script>
+
+    <script>
+
+      $(document).ready(function () {
+        $("#productImage").ezPlus({
+          // zoomType: "inner",
+          cursor: "crosshair",
+          scrollZoom: true,
+          galleryActiveClass: "active-image",
+          // imageCrossfade: true,
+          // zoomWindowWidth: 400,
+          // zoomWindowHeight: 300,
+          // tint: true,
+          // tintColour: "#F90",
+          // tintOpacity: 0.5,
+          easing: true,
+          responsive: true,
+          gallery: "gallery",
+        });
+        //pass the images to Fancybox
+        $("#productImage").bind("click", function (e) {
+          var ez = $("#productImage").data("ezPlus");
+          $.fancyboxPlus(ez.getGalleryList());
+          return false;
+        });
+      });
+    </script>
+
     @endsection

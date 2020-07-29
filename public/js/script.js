@@ -18,12 +18,12 @@
 // ! 1000 is 1 sec
 function home() {
   //? Bootstrap Carousel
-  $(".carousel").carousel({
-    interval: 3000,
-  });
+  // $(".carousel").carousel({
+  //   interval: 3000,
+  // });
   //? Owl Carousel
   $(".owl-carousel").owlCarousel({
-    loop: true,
+    loop: false,
     margin: 10,
     dots: true,
     nav: true,

@@ -90,30 +90,17 @@
       <hr class="my-2" />
 
       <div class="owl-carousel owl-theme container">
+      @foreach ($products as $product)
+     
         <div class="gender-category-item">
-          <img src="./static/images/watch.png" alt="" />
-          <h5>Watch</h5>
+        <a href="{{route('viewspecificpro',$product->id)}}" class="btn">
+          <img src="{{url('/images/vendor/'.$product->user_id.'/'.$product->images()->first()->name)}}" alt="" />
+          <h5 class="ellipsis" data-maxLength="25">{{$product->productname}}</h5>
+    </a>
         </div>
-        <div class="gender-category-item">
-          <img src="./static/images/suit.png" alt="" />
-          <h5>Men's Fashion</h5>
-        </div>
-        <div class="gender-category-item">
-          <img src="./static/images/wallet.png" alt="" />
-          <h5>Wallet</h5>
-        </div>
-        <div class="gender-category-item">
-          <img src="./static/images/shoe.png" alt="" />
-          <h5>Shoes</h5>
-        </div>
-        <div class="gender-category-item">
-          <img src="./static/images/suit.png" alt="" />
-          <h5>Men's Fashion</h5>
-        </div>
-        <div class="gender-category-item">
-          <img src="./static/images/shoe.png" alt="" />
-          <h5>Shoes</h5>
-        </div>
+      @endforeach
+          
+
       </div>
     </section>
     <!-- ? end of male gender category -->
@@ -123,30 +110,16 @@
       <hr class="my-2" />
 
       <div class="owl-carousel owl-theme container">
+     @foreach ($products as $product)
+     
         <div class="gender-category-item">
-          <img src="./static/images/watch.png" alt="" />
-          <h5>Watch</h5>
+        <a href="{{route('viewspecificpro',$product->id)}}" class="btn">
+          <img src="{{url('/images/vendor/'.$product->user_id.'/'.$product->images()->first()->name)}}" alt="" />
+          <h5 class="ellipsis" data-maxLength="25">{{$product->productname}}</h5>
+    </a>
         </div>
-        <div class="gender-category-item">
-          <img src="./static/images/suit.png" alt="" />
-          <h5>Men's Fashion</h5>
-        </div>
-        <div class="gender-category-item">
-          <img src="./static/images/wallet.png" alt="" />
-          <h5>Wallet</h5>
-        </div>
-        <div class="gender-category-item">
-          <img src="./static/images/shoe.png" alt="" />
-          <h5>Shoes</h5>
-        </div>
-        <div class="gender-category-item">
-          <img src="./static/images/suit.png" alt="" />
-          <h5>Men's Fashion</h5>
-        </div>
-        <div class="gender-category-item">
-          <img src="./static/images/shoe.png" alt="" />
-          <h5>Shoes</h5>
-        </div>
+      @endforeach
+       
       </div>
     </section>
     <!-- ? end of female gender category -->

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\ProductCategory;
+use App\Productcategory;
 use App\User;
 use App\Image;
 use App\Order;

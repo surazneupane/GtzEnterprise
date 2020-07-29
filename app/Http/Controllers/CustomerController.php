@@ -16,7 +16,8 @@ class CustomerController extends Controller
     {
         $banners=Image::all()->where('imageable_type','App\User')->where('status','Active');
         $categories=Productcategory::getAllCategories()->get();
-        return view('customer.homepage',compact('banners','categories'));
+        $products=Product::all()->where('status','Live')->take(10);
+         return view('customer.homepage',compact('banners','categories','products'));
 
     }
 
@@ -45,6 +46,13 @@ class CustomerController extends Controller
         return view('customer.product',compact('productToView'));
     }
 
+
+    public function search(Request $request)
+    {
+        $searchedProducts=Product::search($request['search'])->get();
+        dd($searchedProducts);
+
+    }
    
     public function logoutCustomer()
     {
